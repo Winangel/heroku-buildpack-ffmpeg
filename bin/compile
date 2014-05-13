@@ -10,13 +10,11 @@ VENDOR_DIR="vendor"
 FFMPEG_DOWNLOAD_URL="http://ffmpeg.gusari.org/static/32bit/ffmpeg.static.32bit.2014-05-13.tar.gz"
 
 echo "FFMPEG_DOWNLOAD_URL = " $FFMPEG_DOWNLOAD_URL | indent
-echo "LAME_DOWNLOAD_URL = " $LAME_DOWNLOAD_URL | indent
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $FFMPEG_DOWNLOAD_URL | tar xz
-curl -L --silent $LAME_DOWNLOAD_URL | tar xz
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg_lame.sh"
